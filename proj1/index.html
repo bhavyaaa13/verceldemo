@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TechKart - E-Commerce Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">TechKart</div>
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <button id="cartToggleBtn">Cart (<span id="cartCount">0</span>)</button>
+  </header>
+
+  <!-- Category Filters -->
+  <div class="filters">
+    <button class="filter-btn active" data-category="All">All</button>
+    <button class="filter-btn" data-category="Electronics">Electronics</button>
+    <button class="filter-btn" data-category="Fashion">Fashion</button>
+    <button class="filter-btn" data-category="Accessories">Accessories</button>
+  </div>
+
+  <!-- Product Grid -->
+  <main class="container">
+    <div id="productGrid" class="product-grid"></div>
+  </main>
+
+  <!-- Sliding Cart Drawer -->
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Shopping Cart</h3>
+      <button id="closeCartBtn">✕</button>
+    </div>
+    
+    <div id="cartItems" class="cart-items"></div>
+    
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Total:</span>
+        <span>₹<span id="cartTotal">0</span></span>
+      </div>
+      <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Order Summary</h3>
+      <p id="orderSummaryText"></p>
+      <input type="text" id="customerName" placeholder="Enter your full name" required>
+      <input type="text" id="customerAddress" placeholder="Delivery address" required>
+      <div class="modal-actions">
+        <button id="cancelOrderBtn">Cancel</button>
+        <button id="confirmOrderBtn">Place Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
